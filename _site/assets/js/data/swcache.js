@@ -1,42 +1,42 @@
 const resource = [
 
   /* --- CSS --- */
-  '/assets/css/style.css',
+  '/dangtong-tech/_site/assets/css/style.css',
 
   /* --- PWA --- */
-  '/app.js',
-  '/sw.js',
+  '/dangtong-tech/_site/app.js',
+  '/dangtong-tech/_site/sw.js',
 
   /* --- HTML --- */
-  '/index.html',
-  '/404.html',
+  '/dangtong-tech/_site/index.html',
+  '/dangtong-tech/_site/404.html',
   
-    '/categories/',
+    '/dangtong-tech/_site/categories/',
   
-    '/tags/',
+    '/dangtong-tech/_site/tags/',
   
-    '/archives/',
+    '/dangtong-tech/_site/archives/',
   
-    '/about/',
+    '/dangtong-tech/_site/about/',
   
 
   /* --- Favicons & compressed JS --- */
   
   
-    '/assets/img/favicons/android-chrome-192x192.png',
-    '/assets/img/favicons/android-chrome-512x512.png',
-    '/assets/img/favicons/apple-touch-icon.png',
-    '/assets/img/favicons/favicon-16x16.png',
-    '/assets/img/favicons/favicon-32x32.png',
-    '/assets/img/favicons/favicon.ico',
-    '/assets/img/favicons/mstile-150x150.png',
-    '/assets/js/dist/categories.min.js',
-    '/assets/js/dist/commons.min.js',
-    '/assets/js/dist/home.min.js',
-    '/assets/js/dist/misc.min.js',
-    '/assets/js/dist/page.min.js',
-    '/assets/js/dist/post.min.js',
-    '/assets/js/dist/pvreport.min.js'
+    '/dangtong-tech/_site/assets/img/favicons/android-chrome-192x192.png',
+    '/dangtong-tech/_site/assets/img/favicons/android-chrome-512x512.png',
+    '/dangtong-tech/_site/assets/img/favicons/apple-touch-icon.png',
+    '/dangtong-tech/_site/assets/img/favicons/favicon-16x16.png',
+    '/dangtong-tech/_site/assets/img/favicons/favicon-32x32.png',
+    '/dangtong-tech/_site/assets/img/favicons/favicon.ico',
+    '/dangtong-tech/_site/assets/img/favicons/mstile-150x150.png',
+    '/dangtong-tech/_site/assets/js/dist/categories.min.js',
+    '/dangtong-tech/_site/assets/js/dist/commons.min.js',
+    '/dangtong-tech/_site/assets/js/dist/home.min.js',
+    '/dangtong-tech/_site/assets/js/dist/misc.min.js',
+    '/dangtong-tech/_site/assets/js/dist/page.min.js',
+    '/dangtong-tech/_site/assets/js/dist/post.min.js',
+    '/dangtong-tech/_site/assets/js/dist/pvreport.min.js'
 
 ];
 
