@@ -1,6 +1,21 @@
 [
   
   {
+    "title": "Mac 터미널 설정",
+    "url": "/dangtong-tech/docs/posts/MAC-%ED%84%B0%EB%AF%B8%EB%84%90-%EC%84%A4%EC%A0%95/",
+    "categories": "",
+    "tags": "",
+    "date": "2022-09-18 00:00:00 +0900",
+    
+
+
+
+
+
+    "snippet": "ITerm 세팅# Xcode 설치xcode-select —-install# Brew 설치/usr/bin/ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"# Iterm 설치brew install iterm2# Zsh 설치brew install zsh# OhMyZsh 설치sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"  Powerline Fonts 설치          사이트 : https://github.com/powerline/fonts      Code → Download ZIP 클릭      압축해지후 해당 폴더에서 install.sh 수행하면 폰트 설치됨        zshrc 파일안에 아래와 같이 설정# 설정vi ~/.zshrc# 파일 내용plugins=(  git  bundler  dotenv  osx  kubectl)ZSH_THEME=\"agnoster\"  Plugin 종류 : https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins  Iterm2 → Preference → Profile → Text → font 에서 powerline 으로 검색 해서 폰트 지정          폰트 : Meslo LG S DZ for Powerline, Regular      Color 테마 : Solarized Dark        한글 깨짐          Iterm → Preference → Profile → Text 에서 unicode normalization form 을 NFC 로 변경하면 해결됨        프롬프트 꾸미기 및 멀티 라인 적용 (.zshrc 에 아래 내용 추가)"
+  },
+  
+  {
     "title": "Enable Google Page Views",
     "url": "/dangtong-tech/docs/posts/enable-google-pv/",
     "categories": "Blogging, Tutorial",
