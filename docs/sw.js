@@ -1,6 +1,6 @@
-self.importScripts('/dangtong-tech/_site/assets/js/data/swcache.js');
+self.importScripts('/dangtong-tech/docs/assets/js/data/swcache.js');
 
-const cacheName = 'chirpy-20220918.164543';
+const cacheName = 'chirpy-20220918.165826';
 
 function verifyDomain(url) {
   for (const domain of allowedDomains) {
