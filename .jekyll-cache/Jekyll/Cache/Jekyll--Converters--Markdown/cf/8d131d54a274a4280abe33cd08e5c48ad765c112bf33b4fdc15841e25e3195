@@ -1,0 +1,93 @@
+I"#<h1 id="iterm-세팅">ITerm 세팅</h1>
+
+<pre><code class="language-{bash}"># Xcode 설치
+xcode-select —-install
+
+# Brew 설치
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Iterm 설치
+brew install iterm2
+
+# Zsh 설치
+brew install zsh
+
+# OhMyZsh 설치
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+</code></pre>
+
+<ul>
+  <li>Powerline Fonts 설치
+    <ul>
+      <li>사이트 : https://github.com/powerline/fonts</li>
+      <li><kbd>Code</kbd> → <kbd>Download ZIP</kbd> 클릭</li>
+      <li>압축해지후 해당 폴더에서 install.sh 수행하면 폰트 설치됨</li>
+    </ul>
+  </li>
+  <li>zshrc 파일안에 아래와 같이 설정</li>
+</ul>
+
+<pre><code class="language-{bash}"># 설정
+vi ~/.zshrc
+
+# 파일 내용
+plugins=(
+  git
+  bundler
+  dotenv
+  osx
+  kubectl
+)
+ZSH_THEME="agnoster"
+</code></pre>
+
+<blockquote>
+  <p>Plugin 종류 : https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins</p>
+</blockquote>
+
+<ul>
+  <li>Iterm2 → Preference → Profile → Text → font 에서 powerline 으로 검색 해서 폰트 지정
+    <ul>
+      <li>폰트 : Meslo LG S DZ for Powerline, Regular</li>
+      <li>Color 테마 : Solarized Dark</li>
+    </ul>
+  </li>
+  <li>한글 깨짐
+    <ul>
+      <li>Iterm → Preference → Profile → Text 에서 unicode normalization form 을 <strong>NFC</strong> 로 변경하면 해결됨</li>
+    </ul>
+  </li>
+  <li>프롬프트 꾸미기 및 멀티 라인 적용 (.zshrc 에 아래 내용 추가)</li>
+</ul>
+
+<pre><code class="language-{zsh}">## Main prompt
+build_prompt() {
+  RETVAL=$?
+  prompt_status
+  prompt_virtualenv
+  prompt_context
+  prompt_dir
+  prompt_git
+  prompt_bzr
+  prompt_hg
+  prompt_newline # 멀티라인 적용
+  prompt_end
+}
+
+# 멀티라인 적용, 커버모양 변경
+prompt_newline() {
+  if [[ -n $CURRENT_BG ]]; then
+    echo -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR
+%(?.%F{$CURRENT_BG}.%F{red})❯%f"
+
+  else
+    echo -n "%{%k%}"
+  fi
+
+  echo -n "%{%f%}"
+  CURRENT_BG=''
+}
+</code></pre>
+
+:ET
