@@ -1,42 +1,42 @@
 const resource = [
 
   /* --- CSS --- */
-  '/dangtong-tech/docs/assets/css/style.css',
+  '/docs/assets/css/style.css',
 
   /* --- PWA --- */
-  '/dangtong-tech/docs/app.js',
-  '/dangtong-tech/docs/sw.js',
+  '/docs/app.js',
+  '/docs/sw.js',
 
   /* --- HTML --- */
-  '/dangtong-tech/docs/index.html',
-  '/dangtong-tech/docs/404.html',
+  '/docs/index.html',
+  '/docs/404.html',
   
-    '/dangtong-tech/docs/categories/',
+    '/docs/categories/',
   
-    '/dangtong-tech/docs/tags/',
+    '/docs/tags/',
   
-    '/dangtong-tech/docs/archives/',
+    '/docs/archives/',
   
-    '/dangtong-tech/docs/about/',
+    '/docs/about/',
   
 
   /* --- Favicons & compressed JS --- */
   
   
-    '/dangtong-tech/docs/assets/img/favicons/android-chrome-192x192.png',
-    '/dangtong-tech/docs/assets/img/favicons/android-chrome-512x512.png',
-    '/dangtong-tech/docs/assets/img/favicons/apple-touch-icon.png',
-    '/dangtong-tech/docs/assets/img/favicons/favicon-16x16.png',
-    '/dangtong-tech/docs/assets/img/favicons/favicon-32x32.png',
-    '/dangtong-tech/docs/assets/img/favicons/favicon.ico',
-    '/dangtong-tech/docs/assets/img/favicons/mstile-150x150.png',
-    '/dangtong-tech/docs/assets/js/dist/categories.min.js',
-    '/dangtong-tech/docs/assets/js/dist/commons.min.js',
-    '/dangtong-tech/docs/assets/js/dist/home.min.js',
-    '/dangtong-tech/docs/assets/js/dist/misc.min.js',
-    '/dangtong-tech/docs/assets/js/dist/page.min.js',
-    '/dangtong-tech/docs/assets/js/dist/post.min.js',
-    '/dangtong-tech/docs/assets/js/dist/pvreport.min.js'
+    '/docs/assets/img/favicons/android-chrome-192x192.png',
+    '/docs/assets/img/favicons/android-chrome-512x512.png',
+    '/docs/assets/img/favicons/apple-touch-icon.png',
+    '/docs/assets/img/favicons/favicon-16x16.png',
+    '/docs/assets/img/favicons/favicon-32x32.png',
+    '/docs/assets/img/favicons/favicon.ico',
+    '/docs/assets/img/favicons/mstile-150x150.png',
+    '/docs/assets/js/dist/categories.min.js',
+    '/docs/assets/js/dist/commons.min.js',
+    '/docs/assets/js/dist/home.min.js',
+    '/docs/assets/js/dist/misc.min.js',
+    '/docs/assets/js/dist/page.min.js',
+    '/docs/assets/js/dist/post.min.js',
+    '/docs/assets/js/dist/pvreport.min.js'
 
 ];
 

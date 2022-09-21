@@ -1,33 +1,33 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://localhost:4000/dangtong-tech/docs/</id>
+  <id>http://localhost:4000/docs/</id>
   <title>dangtong's Tech Blog!!</title>
   <subtitle>A minimal, responsive, and powerful Jekyll theme for presenting professional writing.</subtitle>
-  <updated>2022-09-21T23:43:11+09:00</updated>
+  <updated>2022-09-21T23:50:07+09:00</updated>
   <author>
     <name>Dangtong Byun</name>
-    <uri>http://localhost:4000/dangtong-tech/docs/</uri>
+    <uri>http://localhost:4000/docs/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://localhost:4000/dangtong-tech/docs/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/docs/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="ko"
-    href="http://localhost:4000/dangtong-tech/docs/"/>
+    href="http://localhost:4000/docs/"/>
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <rights> © 2022 Dangtong Byun </rights>
-  <icon>/dangtong-tech/docs/assets/img/favicons/favicon.ico</icon>
-  <logo>/dangtong-tech/docs/assets/img/favicons/favicon-96x96.png</logo>
+  <icon>/docs/assets/img/favicons/favicon.ico</icon>
+  <logo>/docs/assets/img/favicons/favicon-96x96.png</logo>
 
 
   
   <entry>
     <title>Mac 터미널 설정</title>
-    <link href="http://localhost:4000/dangtong-tech/docs/posts/MAC-%ED%84%B0%EB%AF%B8%EB%84%90-%EC%84%A4%EC%A0%95/" rel="alternate" type="text/html" title="Mac 터미널 설정" />
+    <link href="http://localhost:4000/docs/posts/MAC-%ED%84%B0%EB%AF%B8%EB%84%90-%EC%84%A4%EC%A0%95/" rel="alternate" type="text/html" title="Mac 터미널 설정" />
     <published>2022-09-18T00:00:00+09:00</published>
   
     <updated>2022-09-18T18:01:58+09:00</updated>
   
-    <id>http://localhost:4000/dangtong-tech/docs/posts/MAC-%ED%84%B0%EB%AF%B8%EB%84%90-%EC%84%A4%EC%A0%95/</id>
-    <content src="http://localhost:4000/dangtong-tech/docs/posts/MAC-%ED%84%B0%EB%AF%B8%EB%84%90-%EC%84%A4%EC%A0%95/" />
+    <id>http://localhost:4000/docs/posts/MAC-%ED%84%B0%EB%AF%B8%EB%84%90-%EC%84%A4%EC%A0%95/</id>
+    <content src="http://localhost:4000/docs/posts/MAC-%ED%84%B0%EB%AF%B8%EB%84%90-%EC%84%A4%EC%A0%95/" />
     <author>
       <name>Dangtong Byun</name>
     </author>
@@ -76,13 +76,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
   
   <entry>
     <title>Enable Google Page Views</title>
-    <link href="http://localhost:4000/dangtong-tech/docs/posts/enable-google-pv/" rel="alternate" type="text/html" title="Enable Google Page Views" />
+    <link href="http://localhost:4000/docs/posts/enable-google-pv/" rel="alternate" type="text/html" title="Enable Google Page Views" />
     <published>2021-01-04T08:32:00+09:00</published>
   
     <updated>2021-01-04T08:32:00+09:00</updated>
   
-    <id>http://localhost:4000/dangtong-tech/docs/posts/enable-google-pv/</id>
-    <content src="http://localhost:4000/dangtong-tech/docs/posts/enable-google-pv/" />
+    <id>http://localhost:4000/docs/posts/enable-google-pv/</id>
+    <content src="http://localhost:4000/docs/posts/enable-google-pv/" />
     <author>
       <name>sille_bille</name>
     </author>
@@ -116,13 +116,13 @@ Create GA account a...
   
   <entry>
     <title>Customize the Favicon</title>
-    <link href="http://localhost:4000/dangtong-tech/docs/posts/customize-the-favicon/" rel="alternate" type="text/html" title="Customize the Favicon" />
+    <link href="http://localhost:4000/docs/posts/customize-the-favicon/" rel="alternate" type="text/html" title="Customize the Favicon" />
     <published>2019-08-11T01:34:00+09:00</published>
   
     <updated>2019-08-11T01:34:00+09:00</updated>
   
-    <id>http://localhost:4000/dangtong-tech/docs/posts/customize-the-favicon/</id>
-    <content src="http://localhost:4000/dangtong-tech/docs/posts/customize-the-favicon/" />
+    <id>http://localhost:4000/docs/posts/customize-the-favicon/</id>
+    <content src="http://localhost:4000/docs/posts/customize-the-favicon/" />
     <author>
       <name>cotes</name>
     </author>
@@ -156,13 +156,13 @@ Prepare a square image (PNG, JPG, or SVG) with a size of 512x512 or more, and th
   
   <entry>
     <title>Getting Started</title>
-    <link href="http://localhost:4000/dangtong-tech/docs/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
+    <link href="http://localhost:4000/docs/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
     <published>2019-08-09T21:55:00+09:00</published>
   
     <updated>2019-08-09T21:55:00+09:00</updated>
   
-    <id>http://localhost:4000/dangtong-tech/docs/posts/getting-started/</id>
-    <content src="http://localhost:4000/dangtong-tech/docs/posts/getting-started/" />
+    <id>http://localhost:4000/docs/posts/getting-started/</id>
+    <content src="http://localhost:4000/docs/posts/getting-started/" />
     <author>
       <name>cotes</name>
     </author>
@@ -204,13 +204,13 @@ There are two ways to create a new repository for this theme:
   
   <entry>
     <title>Writing a New Post</title>
-    <link href="http://localhost:4000/dangtong-tech/docs/posts/write-a-new-post/" rel="alternate" type="text/html" title="Writing a New Post" />
+    <link href="http://localhost:4000/docs/posts/write-a-new-post/" rel="alternate" type="text/html" title="Writing a New Post" />
     <published>2019-08-08T15:10:00+09:00</published>
   
     <updated>2019-08-08T15:10:00+09:00</updated>
   
-    <id>http://localhost:4000/dangtong-tech/docs/posts/write-a-new-post/</id>
-    <content src="http://localhost:4000/dangtong-tech/docs/posts/write-a-new-post/" />
+    <id>http://localhost:4000/docs/posts/write-a-new-post/</id>
+    <content src="http://localhost:4000/docs/posts/write-a-new-post/" />
     <author>
       <name>cotes</name>
     </author>
