@@ -4,7 +4,7 @@
   <id>http://localhost:4000/dangtong-tech/</id>
   <title>dangtong's Tech Blog!!</title>
   <subtitle>A minimal, responsive, and powerful Jekyll theme for presenting professional writing.</subtitle>
-  <updated>2022-09-22T01:44:47+09:00</updated>
+  <updated>2022-09-22T02:04:29+09:00</updated>
   <author>
     <name>Dangtong Byun</name>
     <uri>http://localhost:4000/dangtong-tech/</uri>
@@ -77,9 +77,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
   <entry>
     <title>kind를 이용한 쿠버네티스 클러스터 생성하기</title>
     <link href="http://localhost:4000/dangtong-tech/posts/kind/" rel="alternate" type="text/html" title="kind를 이용한 쿠버네티스 클러스터 생성하기" />
-    <published>2012-09-08T21:55:00+09:00</published>
+    <published>2012-09-22T21:55:00+09:00</published>
   
-    <updated>2022-09-22T00:15:15+09:00</updated>
+    <updated>2012-09-22T21:55:00+09:00</updated>
   
     <id>http://localhost:4000/dangtong-tech/posts/kind/</id>
     <content src="http://localhost:4000/dangtong-tech/posts/kind/" />
@@ -105,9 +105,15 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
       1. What is Kind?
 
-2. Install Kind
+Kind 는 로컬 컴퓨터 환경에 쿠버네티스 클러스터를 손쉽고 빠르게 설치 하기 위해  만들어진 도구 입니다.
 
-설치 가이드 URL : https://kind.sigs.k8s.io/docs/user/quick-start/#installation
+Kind는 Go 언어를 기반으로 만들어 졌으며, Docker 이미지를 기반으로 kubeadm을 이용하여 클러스터를 배포 합니다.
+
+kind 공식 홈페이지 : kind.sigs.k8s.io
+
+2. Kind 설치 하기
+
+설치 가이드 원본 URL : https://kind.sigs.k8s.io/docs/user/quick-start/#installation
 
 MacOS
 
@@ -121,15 +127,7 @@ choco install kind
 
 Linux
 
-curl.exe -Lo kind-windows-amd64.exe https://kind.sigs.k8s.io/dl/v0.15.0/kind-windows-amd64
-Move-Item .\kind-windows-amd64.exe c:\some-dir-in-your-PATH\kind.exe
-
-
-3. Kind 로 클러스터 생성(초간단)
-
-클러스터 생성
-
-kind create cluster # Defaul...
+curl.exe -Lo kind-windows-amd64.exe https://kind.sigs....
     </summary>
   
 

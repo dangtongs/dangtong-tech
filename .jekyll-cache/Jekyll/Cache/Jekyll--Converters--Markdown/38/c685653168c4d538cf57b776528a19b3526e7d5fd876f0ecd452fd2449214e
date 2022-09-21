@@ -1,0 +1,328 @@
+I"�+<h1 id="1-what-is-kind">1. What is Kind?</h1>
+
+<p>Kind 는 로컬 컴퓨터 환경에 쿠버네티스 클러스터를 손쉽고 빠르게 설치 하기 위해  만들어진 도구 입니다.</p>
+
+<p>Kind는 Go 언어를 기반으로 만들어 졌으며, Docker 이미지를 기반으로 <a href="https://github.com/kubernetes/kubeadm">kubeadm</a>을 이용하여 클러스터를 배포 합니다.</p>
+
+<p>kind 공식 홈페이지 : <a href="https://kind.sigs.k8s.io">kind.sigs.k8s.io</a></p>
+
+<h1 id="2-kind-설치-하기">2. Kind 설치 하기</h1>
+
+<p>설치 가이드 원본 URL : https://kind.sigs.k8s.io/docs/user/quick-start/#installation</p>
+
+<h3 id="macos">MacOS</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>brew <span class="nb">install </span>kind
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="windows">Windows</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>choco <span class="nb">install </span>kind
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="linux">Linux</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>curl.exe <span class="nt">-Lo</span> kind-windows-amd64.exe https://kind.sigs.k8s.io/dl/v0.15.0/kind-windows-amd64
+Move-Item .<span class="se">\k</span>ind-windows-amd64.exe c:<span class="se">\s</span>ome-dir-in-your-PATH<span class="se">\k</span>ind.exe
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="kind-로-클러스터-생성-초간단">Kind 로 클러스터 생성 (초간단)</h1>
+
+<h3 id="클러스터-생성">클러스터 생성</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>kind create cluster <span class="c"># Default cluster context 이름은 'kind' 로 생성</span>
+kind create cluster <span class="nt">--name</span> dangtong <span class="c"># cluster context 이름을 'dangtong' 으로 지정</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="클러스터-생성-확인">클러스터 생성 확인</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>kind get clusters
+kubectl cluster-info <span class="nt">--context</span> dangtong
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="클러스터-삭제">클러스터 삭제</h3>
+
+<pre><code class="language-{bash}">kind delete cluster
+</code></pre>
+
+<h1 id="설정-파일을-이용한-kind-클러스터-생성">설정 파일을 이용한 Kind 클러스터 생성</h1>
+
+<h3 id="클러스터-생성-1">클러스터 생성</h3>
+
+<h4 id="설정-파일을-이용한-클러스터-생성">설정 파일을 이용한 클러스터 생성</h4>
+
+<p>설정파일을 이용해서 kind 클러스터를 생성할 수 있습니다.</p>
+
+<pre><code class="language-{bash}">kind create cluster --config kind-example-config.yaml
+</code></pre>
+
+<h3 id="3개-노드-클러스터-생성">3개 노드 클러스터 생성</h3>
+
+<p>3개 노드(1 controller, 2worker) 클러스터 설정</p>
+
+<p>```{ bash}</p>
+<h1 id="three-node-two-workers-cluster-config">three node (two workers) cluster config</h1>
+<p>kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:</p>
+<ul>
+  <li>role: control-plane</li>
+  <li>role: worker</li>
+  <li>role: worker
+```</li>
+</ul>
+
+<h3 id="6개-노드-클러스터-생성">6개 노드 클러스터 생성</h3>
+
+<pre><code class="language-{bash}">kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: control-plane
+- role: control-plane
+- role: worker
+- role: worker
+- role: worker
+</code></pre>
+
+<h3 id="쿠버네티스-버전-설정">쿠버네티스 버전 설정</h3>
+
+<p>쿠버네티스 버전에 따른 이미지는 링크에서 확인 가능 : https://github.com/kubernetes-sigs/kind/releases</p>
+
+<pre><code class="language-{bash}">kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  image: kindest/node:v1.16.4@sha256:b91a2c2317a000f3a783489dfb755064177dbc3a0b2f4147d50f04825d016f55
+- role: worker
+  image: kindest/node:v1.16.4@sha256:b91a2c2317a000f3a783489dfb755064177dbc3a0b2f4147d50f04825d016f55
+</code></pre>
+
+<h3 id="네트워크-설정">네트워크 설정</h3>
+
+<ul>
+  <li>Pod Subnet 설정</li>
+</ul>
+
+<pre><code class="language-{bash}">kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  podSubnet: "10.244.0.0/16"
+</code></pre>
+
+<ul>
+  <li>Service Subnet 설정</li>
+</ul>
+
+<pre><code class="language-{bash}">kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  serviceSubnet: "10.96.0.0/12"
+</code></pre>
+
+<ul>
+  <li>Default CNI 설정</li>
+</ul>
+
+<p>Caliaco 완 같은 3rd party CNI 사용을 위해서는 default CNI 설치를 하지 말아야 합니다.</p>
+
+<pre><code class="language-{bash}">kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  # default CNI가 설치 되지 않습니다.
+  disableDefaultCNI: true
+</code></pre>
+
+<ul>
+  <li>kube-proxy 모드 설정</li>
+</ul>
+
+<p>iptables 또는 IPVS 중에 선택해서 사용 가능. default 는 iptables</p>
+
+<pre><code class="language-{bash}">kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  kubeProxyMode: "ipvs"
+</code></pre>
+
+<h3 id="ingress-및-loadbalancer-설정">Ingress 및 LoadBalancer 설정</h3>
+
+<p>Ingress 및 Loadbalancer 를 설정하기 위해서는 KIND 를 이용한 클러스터 생성시  extraPortMapping 설정을 하고, kubeadm툴을 통해 custom node label 을 노드에 설정해야 합니다.</p>
+
+<h4 id="ingress-가능한-클러스터-생성">Ingress 가능한 클러스터 생성</h4>
+
+<p>kind 클러스터를 extraPortMappings 및 node-lables 설정과 함께 생성 합니다.</p>
+
+<ul>
+  <li>ExtreaPortMappings : 로컬 호스트가 80 및 443 포트를 통해 Ingress Controller로 요청이 가능하게 설정합니다.</li>
+  <li>node–labels : Ingress Controller 가 특정 라벨을 가진 노드에서만 수행 되도록 합니다.</li>
+</ul>
+
+<pre><code class="language-{bash}">cat &lt;&lt;EOF | kind create cluster --config=-
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "ingress-ready=true"
+  extraPortMappings:
+  - containerPort: 80
+    hostPort: 80
+    protocol: TCP
+  - containerPort: 443
+    hostPort: 443
+    protocol: TCP
+EOF
+</code></pre>
+
+<p>#### Countour Ingress 생성</p>
+
+<ul>
+  <li>Contour 설치</li>
+</ul>
+
+<pre><code class="language-{bash}">kubectl apply -f https://projectcontour.io/quickstart/contour.yaml
+</code></pre>
+
+<ul>
+  <li>Contour 설정 업데이트</li>
+</ul>
+
+<pre><code class="language-{bash}">kubectl patch daemonsets -n projectcontour envoy -p '{"spec":{"template":{"spec":{"nodeSelector":{"ingress-ready":"true"},"tolerations":[{"key":"node-role.kubernetes.io/control-plane","operator":"Equal","effect":"NoSchedule"},{"key":"node-role.kubernetes.io/master","operator":"Equal","effect":"NoSchedule"}]}}}}'
+</code></pre>
+
+<h4 id="kong-ingress-생성">Kong Ingress 생성</h4>
+
+<ul>
+  <li>Kong 설치</li>
+</ul>
+
+<pre><code class="language-{bash}">kubectl apply -f https://raw.githubusercontent.com/Kong/kubernetes-ingress-controller/master/deploy/single/all-in-one-dbless.yaml
+</code></pre>
+
+<ul>
+  <li>Kong 설정 업데이트</li>
+</ul>
+
+<pre><code class="language-{bash}">kubectl patch deployment -n kong ingress-kong -p '{"spec":{"template":{"spec":{"containers":[{"name":"proxy","ports":[{"containerPort":8000,"hostPort":80,"name":"proxy","protocol":"TCP"},{"containerPort":8443,"hostPort":443,"name":"proxy-ssl","protocol":"TCP"}]}],"nodeSelector":{"ingress-ready":"true"},"tolerations":[{"key":"node-role.kubernetes.io/control-plane","operator":"Equal","effect":"NoSchedule"},{"key":"node-role.kubernetes.io/master","operator":"Equal","effect":"NoSchedule"}]}}}}'
+</code></pre>
+
+<h4 id="nginx-ingress-생성">Nginx Ingress 생성</h4>
+
+<ul>
+  <li>Nginx 설치</li>
+</ul>
+
+<pre><code class="language-{bash}">kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+</code></pre>
+
+<ul>
+  <li>Nginx 설정 업데이트</li>
+</ul>
+
+<pre><code class="language-{bash}">kubectl wait --namespace ingress-nginx \
+  --for=condition=ready pod \
+  --selector=app.kubernetes.io/component=controller \
+  --timeout=90s
+</code></pre>
+
+<h3 id="ingress-사용-예제">Ingress 사용 예제</h3>
+
+<pre><code class="language-{bash}">kind: Pod
+apiVersion: v1
+metadata:
+  name: foo-app
+  labels:
+    app: foo
+spec:
+  containers:
+  - name: foo-app
+    image: hashicorp/http-echo:0.2.3
+    args:
+    - "-text=foo"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: foo-service
+spec:
+  selector:
+    app: foo
+  ports:
+  # Default port used by the image
+  - port: 5678
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: bar-app
+  labels:
+    app: bar
+spec:
+  containers:
+  - name: bar-app
+    image: hashicorp/http-echo:0.2.3
+    args:
+    - "-text=bar"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: bar-service
+spec:
+  selector:
+    app: bar
+  ports:
+  # Default port used by the image
+  - port: 5678
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - pathType: Prefix
+        path: "/foo"
+        backend:
+          service:
+            name: foo-service
+            port:
+              number: 5678
+      - pathType: Prefix
+        path: "/bar"
+        backend:
+          service:
+            name: bar-service
+            port:
+              number: 5678
+---
+</code></pre>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>test
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET
