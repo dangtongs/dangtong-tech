@@ -2,7 +2,7 @@
   
   {
     "title": "Mac 터미널 설정",
-    "url": "/dangtong-tech/docs/posts/MAC-%ED%84%B0%EB%AF%B8%EB%84%90-%EC%84%A4%EC%A0%95/",
+    "url": "/posts/MAC-%ED%84%B0%EB%AF%B8%EB%84%90-%EC%84%A4%EC%A0%95/",
     "categories": "",
     "tags": "",
     "date": "2022-09-18 00:00:00 +0900",
@@ -17,7 +17,7 @@
   
   {
     "title": "Enable Google Page Views",
-    "url": "/dangtong-tech/docs/posts/enable-google-pv/",
+    "url": "/posts/enable-google-pv/",
     "categories": "Blogging, Tutorial",
     "tags": "google analytics, pageviews",
     "date": "2021-01-04 08:32:00 +0900",
@@ -32,7 +32,7 @@
   
   {
     "title": "Customize the Favicon",
-    "url": "/dangtong-tech/docs/posts/customize-the-favicon/",
+    "url": "/posts/customize-the-favicon/",
     "categories": "Blogging, Tutorial",
     "tags": "favicon",
     "date": "2019-08-11 01:34:00 +0900",
@@ -47,7 +47,7 @@
   
   {
     "title": "Getting Started",
-    "url": "/dangtong-tech/docs/posts/getting-started/",
+    "url": "/posts/getting-started/",
     "categories": "Blogging, Tutorial",
     "tags": "getting started",
     "date": "2019-08-09 21:55:00 +0900",
@@ -62,7 +62,7 @@
   
   {
     "title": "Writing a New Post",
-    "url": "/dangtong-tech/docs/posts/write-a-new-post/",
+    "url": "/posts/write-a-new-post/",
     "categories": "Blogging, Tutorial",
     "tags": "writing",
     "date": "2019-08-08 15:10:00 +0900",
@@ -77,7 +77,7 @@
   
   {
     "title": "Text and Typography",
-    "url": "/dangtong-tech/docs/posts/text-and-typography/",
+    "url": "/posts/text-and-typography/",
     "categories": "Blogging, Demo",
     "tags": "typography",
     "date": "2019-08-08 12:33:00 +0900",
@@ -92,7 +92,7 @@
   
   {
     "title": "kind를 이용한 데이터 생성",
-    "url": "/dangtong-tech/docs/posts/kind/",
+    "url": "/posts/kind/",
     "categories": "Blogging, Tutorial",
     "tags": "kubernetes",
     "date": "2012-09-08 21:55:00 +0900",
