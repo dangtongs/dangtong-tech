@@ -4,7 +4,7 @@
   <id>http://localhost:4000/dangtong-tech/</id>
   <title>dangtong's Tech Blog!!</title>
   <subtitle>A minimal, responsive, and powerful Jekyll theme for presenting professional writing.</subtitle>
-  <updated>2022-09-22T00:15:05+09:00</updated>
+  <updated>2022-09-22T01:29:39+09:00</updated>
   <author>
     <name>Dangtong Byun</name>
     <uri>http://localhost:4000/dangtong-tech/</uri>
@@ -75,16 +75,16 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
   
   <entry>
-    <title>Enable Google Page Views</title>
-    <link href="http://localhost:4000/dangtong-tech/posts/enable-google-pv/" rel="alternate" type="text/html" title="Enable Google Page Views" />
-    <published>2021-01-04T08:32:00+09:00</published>
+    <title>kind를 이용한 쿠버네티스 클러스터 생성하기</title>
+    <link href="http://localhost:4000/dangtong-tech/posts/kind/" rel="alternate" type="text/html" title="kind를 이용한 쿠버네티스 클러스터 생성하기" />
+    <published>2012-09-08T21:55:00+09:00</published>
   
-    <updated>2021-01-04T08:32:00+09:00</updated>
+    <updated>2022-09-22T00:15:15+09:00</updated>
   
-    <id>http://localhost:4000/dangtong-tech/posts/enable-google-pv/</id>
-    <content src="http://localhost:4000/dangtong-tech/posts/enable-google-pv/" />
+    <id>http://localhost:4000/dangtong-tech/posts/kind/</id>
+    <content src="http://localhost:4000/dangtong-tech/posts/kind/" />
     <author>
-      <name>sille_bille</name>
+      <name>dangtong</name>
     </author>
 
   
@@ -103,139 +103,33 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 
 
-      This post is to enable Page Views on the Chirpy theme based blog that you just built. This requires technical knowledge and it’s recommended to keep the google_analytics.pv.* empty unless you have a good reason. If your website has low traffic, the page views count would discourage you to write more blogs. With that said, let’s start with the setup.
+      1. What is Kind?
 
-Set up Google Analytics
+2. Install Kind
 
-Create GA account a...
-    </summary>
-  
+설치 가이드 URL : https://kind.sigs.k8s.io/docs/user/quick-start/#installation
 
-  </entry>
+MacOS
 
-  
-  <entry>
-    <title>Customize the Favicon</title>
-    <link href="http://localhost:4000/dangtong-tech/posts/customize-the-favicon/" rel="alternate" type="text/html" title="Customize the Favicon" />
-    <published>2019-08-11T01:34:00+09:00</published>
-  
-    <updated>2019-08-11T01:34:00+09:00</updated>
-  
-    <id>http://localhost:4000/dangtong-tech/posts/customize-the-favicon/</id>
-    <content src="http://localhost:4000/dangtong-tech/posts/customize-the-favicon/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  
-    <summary>
-      
+brew install kind
 
 
+Windows
+
+choco install kind
 
 
+Linux
 
-      The favicons of Chirpy are placed in the directory assets/img/favicons/. You may want to replace them with your own. The following sections will guide you to create and replace the default favicons.
-
-Generate the favicon
-
-Prepare a square image (PNG, JPG, or SVG) with a size of 512x512 or more, and then go to the online tool Real Favicon Generator and click the button Select your Favicon image ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Getting Started</title>
-    <link href="http://localhost:4000/dangtong-tech/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
-    <published>2019-08-09T21:55:00+09:00</published>
-  
-    <updated>2019-08-09T21:55:00+09:00</updated>
-  
-    <id>http://localhost:4000/dangtong-tech/posts/getting-started/</id>
-    <content src="http://localhost:4000/dangtong-tech/posts/getting-started/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  
-    <summary>
-      
+curl.exe -Lo kind-windows-amd64.exe https://kind.sigs.k8s.io/dl/v0.15.0/kind-windows-amd64
+Move-Item .\kind-windows-amd64.exe c:\some-dir-in-your-PATH\kind.exe
 
 
+3. Kind 로 클러스터 생성(초간단)
 
+클러스터 생성
 
-
-      Prerequisites
-
-Follow the instructions in the Jekyll Docs to complete the installation of Ruby, RubyGems, Jekyll, and Bundler. In addition, Git is also required to be installed.
-
-Installation
-
-Creating a New Site
-
-There are two ways to create a new repository for this theme:
-
-
-  Using the Chirpy Starter - Easy to upgrade, isolates irrelevant project files so you can focus on writing.
-  Forking ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Writing a New Post</title>
-    <link href="http://localhost:4000/dangtong-tech/posts/write-a-new-post/" rel="alternate" type="text/html" title="Writing a New Post" />
-    <published>2019-08-08T15:10:00+09:00</published>
-  
-    <updated>2019-08-08T15:10:00+09:00</updated>
-  
-    <id>http://localhost:4000/dangtong-tech/posts/write-a-new-post/</id>
-    <content src="http://localhost:4000/dangtong-tech/posts/write-a-new-post/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      This post will guide you how to write a post on Chirpy theme. Even if you have previous experience with Jekyll, this article is worth reading, because many features require specific variables to be set.
-
-Naming and Path
-
-Create a new file named YYYY-MM-DD-TITLE.EXTENSION and put it in the _posts of the root directory. Please note that the EXTENSION must be one of md and markdown. If you want to...
+kind create cluster # Defaul...
     </summary>
   
 
