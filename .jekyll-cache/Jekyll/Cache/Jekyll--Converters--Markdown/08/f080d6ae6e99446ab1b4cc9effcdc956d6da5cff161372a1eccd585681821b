@@ -1,4 +1,4 @@
-I"[<h1 id="1-what-is-kind">1. What is Kind?</h1>
+I";`<h1 id="1-what-is-kind">1. What is Kind?</h1>
 
 <p>Kind 는 로컬 컴퓨터 환경에 쿠버네티스 클러스터를 손쉽고 빠르게 설치 하기 위해  만들어진 도구 입니다.</p>
 
@@ -34,6 +34,8 @@ Move-Item .<span class="se">\k</span>ind-windows-amd64.exe c:<span class="se">\s
 
 <h3 id="클러스터-생성">클러스터 생성</h3>
 
+<p>아래와 같이 kind 명령어를 이용해서 인라인으로 클러스터를 쉽게 생성 할 수 있습니다.</p>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>kind create cluster <span class="c"># Default cluster context 이름은 'kind' 로 생성</span>
@@ -44,8 +46,8 @@ kind create cluster <span class="nt">--name</span> dangtong <span class="c"># cl
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>kind get clusters
-kubectl cluster-info <span class="nt">--context</span> dangtong
+</pre></td><td class="rouge-code"><pre>kind get clusters <span class="c"># kind 명령 이용한 조회</span>
+kubectl cluster-info <span class="nt">--context</span> dangtong <span class="c"># kubectl 이용한 조회</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="클러스터-삭제">클러스터 삭제</h3>
@@ -68,7 +70,7 @@ kubectl cluster-info <span class="nt">--context</span> dangtong
 
 <h3 id="3개-노드-클러스터-생성">3개 노드 클러스터 생성</h3>
 
-<p>3개 노드(1 controller, 2worker) 클러스터 설정</p>
+<p>3개 노드(1 controller, 2worker) 를 생성 하되, 각 노드마다 롤(role) 을 부여해서 생성 할 수 있습니다.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -87,6 +89,8 @@ nodes:
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="6개-노드-클러스터-생성">6개 노드 클러스터 생성</h3>
+
+<p>고가용성을 위해서 Control plane 을 3개 생성하고, worker 노드도 하나 더 추가 해봅니다.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -110,7 +114,7 @@ nodes:
 
 <h3 id="쿠버네티스-버전-설정">쿠버네티스 버전 설정</h3>
 
-<p>쿠버네티스 버전에 따른 이미지는 링크에서 확인 가능 : https://github.com/kubernetes-sigs/kind/releases</p>
+<p>쿠버네티스 버전별 도커 이미지를 선택해서 구성 할 수 있습니다. 쿠버네티스 버전에 따른 이미지는 다음링크 에서 확인 가능 : https://github.com/kubernetes-sigs/kind/releases 본인이 원하는 버전에 맞는 image tag 를 선택해서 지정 할 수 있습니다.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -159,10 +163,10 @@ networking:
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
-  <li>Default CNI 설정</li>
+  <li>Default CNI(Common Network Interface) 설정</li>
 </ul>
 
-<p>Caliaco 완 같은 3rd party CNI 사용을 위해서는 default CNI 설치를 하지 말아야 합니다.</p>
+<p><a href="https://www.tigera.io/project-calico/">Calico</a>, <a href="https://github.com/flannel-io/flannel">Flannel</a>  같은 3rd party CNI 사용을 위해서는 default CNI 설치를 하지 말아야 합니다.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -193,6 +197,8 @@ networking:
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="클러스터-생성-예제">클러스터 생성 예제</h3>
+
+<p>아래와 같이 3-node-cluster.yaml 파일을 만들어 kubernetes 클러스터를 생성 해봅니다.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -242,6 +248,12 @@ networking:
   <span class="na">image</span><span class="pi">:</span> <span class="s">kindest/node:v1.22.13@sha256:4904eda4d6e64b402169797805b8ec01f50133960ad6c19af45173a27eadf959</span>
 <span class="na">networking</span><span class="pi">:</span>
   <span class="na">serviceSubnet</span><span class="pi">:</span> <span class="s2">"</span><span class="s">10.120.0.0/16"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>설정파일을 만들었다면 kind 명령어를 이용해서 쿠버네티스 클러스터를 생성 합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>kind create cluster <span class="nt">--config</span> 3-node-cluster.yaml
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h1 id="5-ingress-및-loadbalancer-설정">5. Ingress 및 LoadBalancer 설정</h1>
