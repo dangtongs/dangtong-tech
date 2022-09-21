@@ -1,4 +1,4 @@
-I"eU<h2 id="1-what-is-kind">1. What is Kind?</h2>
+I"gU<h2 id="1-what-is-kind">1. What is Kind?</h2>
 
 <h2 id="2-install-kind">2. Install Kind</h2>
 
@@ -50,7 +50,7 @@ kubectl cluster-info <span class="nt">--context</span> dangtong
 
 <h2 id="4-설정-파일을-이용한-kind-클러스터-생성">4. 설정 파일을 이용한 Kind 클러스터 생성</h2>
 
-<h3 id="클러스터-생성-1">클러스터 생성</h3>
+<h3 id="--클러스터-생성">- 클러스터 생성</h3>
 
 <h4 id="설정-파일을-이용한-클러스터-생성">설정 파일을 이용한 클러스터 생성</h4>
 
