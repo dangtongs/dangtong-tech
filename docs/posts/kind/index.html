@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="twitter:creator" content="@dangtong" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dangtong"},"dateModified":"2022-09-22T00:12:42+09:00","datePublished":"2012-09-08T21:55:00+09:00","description":"1. What is Kind?","headline":"kind를 이용한 쿠버네티스 클러스터 생성하기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/dangtong-tech/posts/kind/"},"url":"http://localhost:4000/dangtong-tech/posts/kind/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dangtong"},"dateModified":"2022-09-22T00:14:03+09:00","datePublished":"2012-09-08T21:55:00+09:00","description":"1. What is Kind?","headline":"kind를 이용한 쿠버네티스 클러스터 생성하기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/dangtong-tech/posts/kind/"},"url":"http://localhost:4000/dangtong-tech/posts/kind/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -694,6 +694,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -710,42 +722,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
       
 
       
@@ -919,7 +895,7 @@
 
 
 <em class=""
-    data-ts="1663773162"
+    data-ts="1663773243"
     data-df="ll"
     data-toggle="tooltip" data-placement="bottom">
   Sep 22, 2022
@@ -1013,7 +989,7 @@
 Move-Item .<span class="se">\k</span>ind-windows-amd64.exe c:<span class="se">\s</span>ome-dir-in-your-PATH<span class="se">\k</span>ind.exe
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="3-kind-로-클러스터-생성초간단"><span class="mr-2">3. Kind 로 클러스터 생성(초간단)</span><a href="#3-kind-로-클러스터-생성초간단" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h1 id="3-kind-로-클러스터-생성초간단">3. Kind 로 클러스터 생성(초간단)</h1>
 
 <h3 id="클러스터-생성"><span class="mr-2">클러스터 생성</span><a href="#클러스터-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1043,11 +1019,11 @@ kubectl cluster-info <span class="nt">--context</span> dangtong
 </pre></td><td class="rouge-code"><pre>kind delete cluster
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="4-설정-파일을-이용한-kind-클러스터-생성"><span class="mr-2">4. 설정 파일을 이용한 Kind 클러스터 생성</span><a href="#4-설정-파일을-이용한-kind-클러스터-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h1 id="4-설정-파일을-이용한-kind-클러스터-생성">4. 설정 파일을 이용한 Kind 클러스터 생성</h1>
 
-<h3 id="클러스터-생성-1"><span class="mr-2">클러스터 생성</span><a href="#클러스터-생성-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="클러스터-생성-1"><span class="mr-2">클러스터 생성</span><a href="#클러스터-생성-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="설정-파일을-이용한-클러스터-생성"><span class="mr-2">설정 파일을 이용한 클러스터 생성</span><a href="#설정-파일을-이용한-클러스터-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="설정-파일을-이용한-클러스터-생성"><span class="mr-2">설정 파일을 이용한 클러스터 생성</span><a href="#설정-파일을-이용한-클러스터-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>설정파일을 이용해서 kind 클러스터를 생성할 수 있습니다.</p>
 
@@ -1057,7 +1033,7 @@ kubectl cluster-info <span class="nt">--context</span> dangtong
 </pre></td><td class="rouge-code"><pre>kind create cluster <span class="nt">--config</span> kind-example-config.yaml
 </pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="3개-노드-클러스터-생성"><span class="mr-2">3개 노드 클러스터 생성</span><a href="#3개-노드-클러스터-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="3개-노드-클러스터-생성"><span class="mr-2">3개 노드 클러스터 생성</span><a href="#3개-노드-클러스터-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>3개 노드(1 controller, 2worker) 클러스터 설정</p>
 
@@ -1079,7 +1055,7 @@ kubectl cluster-info <span class="nt">--context</span> dangtong
 <span class="pi">-</span> <span class="na">role</span><span class="pi">:</span> <span class="s">worker</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="6개-노드-클러스터-생성"><span class="mr-2">6개 노드 클러스터 생성</span><a href="#6개-노드-클러스터-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="6개-노드-클러스터-생성"><span class="mr-2">6개 노드 클러스터 생성</span><a href="#6개-노드-클러스터-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <pre><code class="language-{bash}">kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
@@ -1092,7 +1068,7 @@ nodes:
 - role: worker
 </code></pre>
 
-<h3 id="쿠버네티스-버전-설정"><span class="mr-2">쿠버네티스 버전 설정</span><a href="#쿠버네티스-버전-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="쿠버네티스-버전-설정"><span class="mr-2">쿠버네티스 버전 설정</span><a href="#쿠버네티스-버전-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>쿠버네티스 버전에 따른 이미지는 링크에서 확인 가능 : https://github.com/kubernetes-sigs/kind/releases</p>
 

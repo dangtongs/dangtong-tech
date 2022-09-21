@@ -1,4 +1,4 @@
-I"�T<h1 id="1-what-is-kind">1. What is Kind?</h1>
+I"eU<h1 id="1-what-is-kind">1. What is Kind?</h1>
 
 <h1 id="2-install-kind">2. Install Kind</h1>
 
@@ -6,72 +6,72 @@
 
 <h2 id="macos">MacOS</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>brew install kind
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td> --><td class="rouge-code"><pre>brew install kind
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="windows">Windows</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>choco <span class="nb">install </span>kind
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td> --><td class="rouge-code"><pre>choco <span class="nb">install </span>kind
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="linux">Linux</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>curl.exe <span class="nt">-Lo</span> kind-windows-amd64.exe https://kind.sigs.k8s.io/dl/v0.15.0/kind-windows-amd64
+</pre></td> --><td class="rouge-code"><pre>curl.exe <span class="nt">-Lo</span> kind-windows-amd64.exe https://kind.sigs.k8s.io/dl/v0.15.0/kind-windows-amd64
 Move-Item .<span class="se">\k</span>ind-windows-amd64.exe c:<span class="se">\s</span>ome-dir-in-your-PATH<span class="se">\k</span>ind.exe
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h2 id="3-kind-로-클러스터-생성초간단">3. Kind 로 클러스터 생성(초간단)</h2>
+<h1 id="3-kind-로-클러스터-생성초간단">3. Kind 로 클러스터 생성(초간단)</h1>
 
 <h3 id="클러스터-생성">클러스터 생성</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>kind create cluster <span class="c"># Default cluster context 이름은 'kind' 로 생성</span>
+</pre></td> --><td class="rouge-code"><pre>kind create cluster <span class="c"># Default cluster context 이름은 'kind' 로 생성</span>
 kind create cluster <span class="nt">--name</span> dangtong <span class="c"># cluster context 이름을 'dangtong' 으로 지정</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="클러스터-생성-확인">클러스터 생성 확인</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre>kind get clusters
+</pre></td> --><td class="rouge-code"><pre>kind get clusters
 kubectl cluster-info <span class="nt">--context</span> dangtong
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="클러스터-삭제">클러스터 삭제</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>kind delete cluster
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td> --><td class="rouge-code"><pre>kind delete cluster
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h2 id="4-설정-파일을-이용한-kind-클러스터-생성">4. 설정 파일을 이용한 Kind 클러스터 생성</h2>
+<h1 id="4-설정-파일을-이용한-kind-클러스터-생성">4. 설정 파일을 이용한 Kind 클러스터 생성</h1>
 
-<h3 id="클러스터-생성-1">클러스터 생성</h3>
+<h2 id="클러스터-생성-1">클러스터 생성</h2>
 
-<h4 id="설정-파일을-이용한-클러스터-생성">설정 파일을 이용한 클러스터 생성</h4>
+<h3 id="설정-파일을-이용한-클러스터-생성">설정 파일을 이용한 클러스터 생성</h3>
 
 <p>설정파일을 이용해서 kind 클러스터를 생성할 수 있습니다.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>kind create cluster <span class="nt">--config</span> kind-example-config.yaml
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td> --><td class="rouge-code"><pre>kind create cluster <span class="nt">--config</span> kind-example-config.yaml
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h4 id="3개-노드-클러스터-생성">3개 노드 클러스터 생성</h4>
+<h3 id="3개-노드-클러스터-생성">3개 노드 클러스터 생성</h3>
 
 <p>3개 노드(1 controller, 2worker) 클러스터 설정</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-</pre></td><td class="rouge-code"><pre><span class="c1"># three node (two workers) cluster config</span>
+</pre></td> --><td class="rouge-code"><pre><span class="c1"># three node (two workers) cluster config</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">Cluster</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kind.x-k8s.io/v1alpha4</span>
 <span class="na">nodes</span><span class="pi">:</span>
@@ -80,7 +80,7 @@ kubectl cluster-info <span class="nt">--context</span> dangtong
 <span class="pi">-</span> <span class="na">role</span><span class="pi">:</span> <span class="s">worker</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h4 id="6개-노드-클러스터-생성">6개 노드 클러스터 생성</h4>
+<h3 id="6개-노드-클러스터-생성">6개 노드 클러스터 생성</h3>
 
 <pre><code class="language-{bash}">kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
@@ -93,18 +93,18 @@ nodes:
 - role: worker
 </code></pre>
 
-<h3 id="쿠버네티스-버전-설정">쿠버네티스 버전 설정</h3>
+<h2 id="쿠버네티스-버전-설정">쿠버네티스 버전 설정</h2>
 
 <p>쿠버네티스 버전에 따른 이미지는 링크에서 확인 가능 : https://github.com/kubernetes-sigs/kind/releases</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
 7
-</pre></td><td class="rouge-code"><pre><span class="na">kind</span><span class="pi">:</span> <span class="s">Cluster</span>
+</pre></td> --><td class="rouge-code"><pre><span class="na">kind</span><span class="pi">:</span> <span class="s">Cluster</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kind.x-k8s.io/v1alpha4</span>
 <span class="na">nodes</span><span class="pi">:</span>
 <span class="pi">-</span> <span class="na">role</span><span class="pi">:</span> <span class="s">control-plane</span>
@@ -117,11 +117,11 @@ nodes:
 
 <h4 id="pod-subnet-설정">Pod Subnet 설정</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>kind: Cluster
+</pre></td> --><td class="rouge-code"><pre>kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 networking:
   podSubnet: <span class="s2">"10.244.0.0/16"</span>
@@ -129,11 +129,11 @@ networking:
 
 <h4 id="service-subnet-설정">Service Subnet 설정</h4>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="na">kind</span><span class="pi">:</span> <span class="s">Cluster</span>
+</pre></td> --><td class="rouge-code"><pre><span class="na">kind</span><span class="pi">:</span> <span class="s">Cluster</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kind.x-k8s.io/v1alpha4</span>
 <span class="na">networking</span><span class="pi">:</span>
   <span class="na">serviceSubnet</span><span class="pi">:</span> <span class="s2">"</span><span class="s">10.96.0.0/12"</span>
@@ -143,12 +143,12 @@ networking:
 
 <p>Caliaco 완 같은 3rd party CNI 사용을 위해서는 default CNI 설치를 하지 말아야 합니다.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td><td class="rouge-code"><pre><span class="na">kind</span><span class="pi">:</span> <span class="s">Cluster</span>
+</pre></td> --><td class="rouge-code"><pre><span class="na">kind</span><span class="pi">:</span> <span class="s">Cluster</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kind.x-k8s.io/v1alpha4</span>
 <span class="na">networking</span><span class="pi">:</span>
   <span class="c1"># default CNI가 설치 되지 않습니다.</span>
@@ -159,11 +159,11 @@ networking:
 
 <p>iptables 또는 IPVS 중에 선택해서 사용 가능. default 는 iptables</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="na">kind</span><span class="pi">:</span> <span class="s">Cluster</span>
+</pre></td> --><td class="rouge-code"><pre><span class="na">kind</span><span class="pi">:</span> <span class="s">Cluster</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kind.x-k8s.io/v1alpha4</span>
 <span class="na">networking</span><span class="pi">:</span>
   <span class="na">kubeProxyMode</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ipvs"</span>
@@ -182,7 +182,7 @@ networking:
   <li>node–labels : Ingress Controller 가 특정 라벨을 가진 노드에서만 수행 되도록 합니다.</li>
 </ul>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -201,7 +201,7 @@ networking:
 17
 18
 19
-</pre></td><td class="rouge-code"><pre><span class="s">cat &lt;&lt;EOF | kind create cluster --config=-</span>
+</pre></td> --><td class="rouge-code"><pre><span class="s">cat &lt;&lt;EOF | kind create cluster --config=-</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">Cluster</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kind.x-k8s.io/v1alpha4</span>
 <span class="na">nodes</span><span class="pi">:</span>
@@ -228,16 +228,16 @@ networking:
   <li>Contour 설치</li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>kubectl apply <span class="nt">-f</span> https://projectcontour.io/quickstart/contour.yaml
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td> --><td class="rouge-code"><pre>kubectl apply <span class="nt">-f</span> https://projectcontour.io/quickstart/contour.yaml
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>Contour 설정 업데이트</li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>kubectl patch daemonsets <span class="nt">-n</span> projectcontour envoy <span class="nt">-p</span> <span class="s1">'{"spec":{"template":{"spec":{"nodeSelector":{"ingress-ready":"true"},"tolerations":[{"key":"node-role.kubernetes.io/control-plane","operator":"Equal","effect":"NoSchedule"},{"key":"node-role.kubernetes.io/master","operator":"Equal","effect":"NoSchedule"}]}}}}'</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td> --><td class="rouge-code"><pre>kubectl patch daemonsets <span class="nt">-n</span> projectcontour envoy <span class="nt">-p</span> <span class="s1">'{"spec":{"template":{"spec":{"nodeSelector":{"ingress-ready":"true"},"tolerations":[{"key":"node-role.kubernetes.io/control-plane","operator":"Equal","effect":"NoSchedule"},{"key":"node-role.kubernetes.io/master","operator":"Equal","effect":"NoSchedule"}]}}}}'</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="kong-ingress-생성">Kong Ingress 생성</h4>
@@ -246,16 +246,16 @@ networking:
   <li>Kong 설치</li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>kubectl apply <span class="nt">-f</span> https://raw.githubusercontent.com/Kong/kubernetes-ingress-controller/master/deploy/single/all-in-one-dbless.yaml
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td> --><td class="rouge-code"><pre>kubectl apply <span class="nt">-f</span> https://raw.githubusercontent.com/Kong/kubernetes-ingress-controller/master/deploy/single/all-in-one-dbless.yaml
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>Kong 설정 업데이트</li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>kubectl patch deployment <span class="nt">-n</span> kong ingress-kong <span class="nt">-p</span> <span class="s1">'{"spec":{"template":{"spec":{"containers":[{"name":"proxy","ports":[{"containerPort":8000,"hostPort":80,"name":"proxy","protocol":"TCP"},{"containerPort":8443,"hostPort":443,"name":"proxy-ssl","protocol":"TCP"}]}],"nodeSelector":{"ingress-ready":"true"},"tolerations":[{"key":"node-role.kubernetes.io/control-plane","operator":"Equal","effect":"NoSchedule"},{"key":"node-role.kubernetes.io/master","operator":"Equal","effect":"NoSchedule"}]}}}}'</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td> --><td class="rouge-code"><pre>kubectl patch deployment <span class="nt">-n</span> kong ingress-kong <span class="nt">-p</span> <span class="s1">'{"spec":{"template":{"spec":{"containers":[{"name":"proxy","ports":[{"containerPort":8000,"hostPort":80,"name":"proxy","protocol":"TCP"},{"containerPort":8443,"hostPort":443,"name":"proxy-ssl","protocol":"TCP"}]}],"nodeSelector":{"ingress-ready":"true"},"tolerations":[{"key":"node-role.kubernetes.io/control-plane","operator":"Equal","effect":"NoSchedule"},{"key":"node-role.kubernetes.io/master","operator":"Equal","effect":"NoSchedule"}]}}}}'</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h4 id="nginx-ingress-생성">Nginx Ingress 생성</h4>
@@ -264,19 +264,19 @@ networking:
   <li>Nginx 설치</li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>kubectl apply <span class="nt">-f</span> https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td> --><td class="rouge-code"><pre>kubectl apply <span class="nt">-f</span> https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>Nginx 설정 업데이트</li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>kubectl <span class="nb">wait</span> <span class="nt">--namespace</span> ingress-nginx <span class="se">\</span>
+</pre></td> --><td class="rouge-code"><pre>kubectl <span class="nb">wait</span> <span class="nt">--namespace</span> ingress-nginx <span class="se">\</span>
   <span class="nt">--for</span><span class="o">=</span><span class="nv">condition</span><span class="o">=</span>ready pod <span class="se">\</span>
   <span class="nt">--selector</span><span class="o">=</span>app.kubernetes.io/component<span class="o">=</span>controller <span class="se">\</span>
   <span class="nt">--timeout</span><span class="o">=</span>90s
@@ -284,7 +284,7 @@ networking:
 
 <h4 id="ingress-사용하기">Ingress 사용하기</h4>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><!-- <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -355,7 +355,7 @@ networking:
 69
 70
 71
-</pre></td><td class="rouge-code"><pre><span class="na">kind</span><span class="pi">:</span> <span class="s">Pod</span>
+</pre></td> --><td class="rouge-code"><pre><span class="na">kind</span><span class="pi">:</span> <span class="s">Pod</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
 <span class="na">metadata</span><span class="pi">:</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s">foo-app</span>
