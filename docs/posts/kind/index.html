@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="twitter:creator" content="@dangtong" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dangtong"},"dateModified":"2022-09-22T02:10:48+09:00","datePublished":"2012-09-22T21:55:00+09:00","description":"1. What is Kind?","headline":"kind를 이용한 쿠버네티스 클러스터 생성하기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/dangtong-tech/posts/kind/"},"url":"http://localhost:4000/dangtong-tech/posts/kind/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dangtong"},"dateModified":"2022-09-22T02:14:10+09:00","datePublished":"2012-09-22T21:55:00+09:00","description":"1. What is Kind?","headline":"kind를 이용한 쿠버네티스 클러스터 생성하기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/dangtong-tech/posts/kind/"},"url":"http://localhost:4000/dangtong-tech/posts/kind/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -836,7 +836,7 @@
 
 
 <em class=""
-    data-ts="1663780248"
+    data-ts="1663780450"
     data-df="ll"
     data-toggle="tooltip" data-placement="bottom">
   Sep 22, 2022
@@ -888,7 +888,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1125 words">
+  title="1128 words">
   <em>6 min</em> read</span>
 
     </div>
@@ -936,7 +936,7 @@
 Move-Item .<span class="se">\k</span>ind-windows-amd64.exe c:<span class="se">\s</span>ome-dir-in-your-PATH<span class="se">\k</span>ind.exe
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="kind-로-클러스터-생성-초간단">Kind 로 클러스터 생성 (초간단)</h1>
+<h1 id="3-kind-로-클러스터-생성-초간단">3. Kind 로 클러스터 생성 (초간단)</h1>
 
 <h3 id="클러스터-생성"><span class="mr-2">클러스터 생성</span><a href="#클러스터-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -966,7 +966,7 @@ kubectl cluster-info <span class="nt">--context</span> dangtong
 </pre></td><td class="rouge-code"><pre>kind delete cluster
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="설정-파일을-이용한-kind-클러스터-생성">설정 파일을 이용한 Kind 클러스터 생성</h1>
+<h1 id="4-설정-파일을-이용한-kind-클러스터-생성">4. 설정 파일을 이용한 Kind 클러스터 생성</h1>
 
 <h3 id="클러스터-생성-1"><span class="mr-2">클러스터 생성</span><a href="#클러스터-생성-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1174,7 +1174,7 @@ networking:
   <span class="na">serviceSubnet</span><span class="pi">:</span> <span class="s2">"</span><span class="s">10.120.0.0/16"</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="ingress-및-loadbalancer-설정">Ingress 및 LoadBalancer 설정</h1>
+<h1 id="5-ingress-및-loadbalancer-설정">5. Ingress 및 LoadBalancer 설정</h1>
 
 <p>Ingress 및 Loadbalancer 를 설정하기 위해서는 KIND 를 이용한 클러스터 생성시  extraPortMapping 설정을 하고, kubeadm툴을 통해 custom node label 을 노드에 설정해야 합니다.</p>
 
