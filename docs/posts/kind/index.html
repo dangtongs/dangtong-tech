@@ -856,7 +856,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="909 words">
+  title="1047 words">
   <em>5 min</em> read</span>
 
     </div>
@@ -928,8 +928,11 @@ kubectl cluster-info <span class="nt">--context</span> dangtong
 
 <h3 id="클러스터-삭제"><span class="mr-2">클러스터 삭제</span><a href="#클러스터-삭제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<pre><code class="language-{bash}">kind delete cluster
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>kind delete cluster
+</pre></td></tr></tbody></table></code></div></div>
 
 <h1 id="설정-파일을-이용한-kind-클러스터-생성">설정 파일을 이용한 Kind 클러스터 생성</h1>
 
@@ -939,28 +942,48 @@ kubectl cluster-info <span class="nt">--context</span> dangtong
 
 <p>설정파일을 이용해서 kind 클러스터를 생성할 수 있습니다.</p>
 
-<pre><code class="language-{bash}">kind create cluster --config kind-example-config.yaml
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>kind create cluster <span class="nt">--config</span> kind-example-config.yaml
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="3개-노드-클러스터-생성"><span class="mr-2">3개 노드 클러스터 생성</span><a href="#3개-노드-클러스터-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>3개 노드(1 controller, 2worker) 클러스터 설정</p>
 
-<p>```{ bash}</p>
-<h1 id="three-node-two-workers-cluster-config">three node (two workers) cluster config</h1>
-<p>kind: Cluster
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c"># three node (two workers) cluster config</span>
+kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
-nodes:</p>
-<ul>
-  <li>role: control-plane</li>
-  <li>role: worker</li>
-  <li>role: worker
-```</li>
-</ul>
+nodes:
+- role: control-plane
+- role: worker
+- role: worker
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="6개-노드-클러스터-생성"><span class="mr-2">6개 노드 클러스터 생성</span><a href="#6개-노드-클러스터-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<pre><code class="language-{bash}">kind: Cluster
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
 - role: control-plane
@@ -969,20 +992,29 @@ nodes:
 - role: worker
 - role: worker
 - role: worker
-</code></pre>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="쿠버네티스-버전-설정"><span class="mr-2">쿠버네티스 버전 설정</span><a href="#쿠버네티스-버전-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>쿠버네티스 버전에 따른 이미지는 링크에서 확인 가능 : https://github.com/kubernetes-sigs/kind/releases</p>
 
-<pre><code class="language-{bash}">kind: Cluster
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
 - role: control-plane
   image: kindest/node:v1.16.4@sha256:b91a2c2317a000f3a783489dfb755064177dbc3a0b2f4147d50f04825d016f55
 - role: worker
   image: kindest/node:v1.16.4@sha256:b91a2c2317a000f3a783489dfb755064177dbc3a0b2f4147d50f04825d016f55
-</code></pre>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="네트워크-설정"><span class="mr-2">네트워크 설정</span><a href="#네트워크-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -990,21 +1022,33 @@ nodes:
   <li>Pod Subnet 설정</li>
 </ul>
 
-<pre><code class="language-{bash}">kind: Cluster
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 networking:
-  podSubnet: "10.244.0.0/16"
-</code></pre>
+  podSubnet: <span class="s2">"10.244.0.0/16"</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <ul>
   <li>Service Subnet 설정</li>
 </ul>
 
-<pre><code class="language-{bash}">kind: Cluster
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 networking:
-  serviceSubnet: "10.96.0.0/12"
-</code></pre>
+  serviceSubnet: <span class="s2">"10.96.0.0/12"</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <ul>
   <li>Default CNI 설정</li>
@@ -1012,12 +1056,19 @@ networking:
 
 <p>Caliaco 완 같은 3rd party CNI 사용을 위해서는 default CNI 설치를 하지 말아야 합니다.</p>
 
-<pre><code class="language-{bash}">kind: Cluster
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 networking:
-  # default CNI가 설치 되지 않습니다.
-  disableDefaultCNI: true
-</code></pre>
+  <span class="c"># default CNI가 설치 되지 않습니다.</span>
+  disableDefaultCNI: <span class="nb">true</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <ul>
   <li>kube-proxy 모드 설정</li>
@@ -1025,11 +1076,17 @@ networking:
 
 <p>iptables 또는 IPVS 중에 선택해서 사용 가능. default 는 iptables</p>
 
-<pre><code class="language-{bash}">kind: Cluster
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 networking:
-  kubeProxyMode: "ipvs"
-</code></pre>
+  kubeProxyMode: <span class="s2">"ipvs"</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="ingress-및-loadbalancer-설정"><span class="mr-2">Ingress 및 LoadBalancer 설정</span><a href="#ingress-및-loadbalancer-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1044,26 +1101,47 @@ networking:
   <li>node–labels : Ingress Controller 가 특정 라벨을 가진 노드에서만 수행 되도록 합니다.</li>
 </ul>
 
-<pre><code class="language-{bash}">cat &lt;&lt;EOF | kind create cluster --config=-
-kind: Cluster
-apiVersion: kind.x-k8s.io/v1alpha4
-nodes:
-- role: control-plane
-  kubeadmConfigPatches:
-  - |
-    kind: InitConfiguration
-    nodeRegistration:
-      kubeletExtraArgs:
-        node-labels: "ingress-ready=true"
-  extraPortMappings:
-  - containerPort: 80
-    hostPort: 80
-    protocol: TCP
-  - containerPort: 443
-    hostPort: 443
-    protocol: TCP
-EOF
-</code></pre>
+<div class="language-yaml highlighter-rouge"><div class="code-header">
+        <span data-label-text="YAML"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="s">cat &lt;&lt;EOF | kind create cluster --config=-</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Cluster</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kind.x-k8s.io/v1alpha4</span>
+<span class="na">nodes</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">role</span><span class="pi">:</span> <span class="s">control-plane</span>
+  <span class="na">kubeadmConfigPatches</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="pi">|</span>
+    <span class="s">kind: InitConfiguration</span>
+    <span class="s">nodeRegistration:</span>
+      <span class="s">kubeletExtraArgs:</span>
+        <span class="s">node-labels: "ingress-ready=true"</span>
+  <span class="na">extraPortMappings</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">containerPort</span><span class="pi">:</span> <span class="m">80</span>
+    <span class="na">hostPort</span><span class="pi">:</span> <span class="m">80</span>
+    <span class="na">protocol</span><span class="pi">:</span> <span class="s">TCP</span>
+  <span class="pi">-</span> <span class="na">containerPort</span><span class="pi">:</span> <span class="m">443</span>
+    <span class="na">hostPort</span><span class="pi">:</span> <span class="m">443</span>
+    <span class="na">protocol</span><span class="pi">:</span> <span class="s">TCP</span>
+<span class="s">EOF</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <p>#### Countour Ingress 생성</p>
 
@@ -1071,15 +1149,21 @@ EOF
   <li>Contour 설치</li>
 </ul>
 
-<pre><code class="language-{bash}">kubectl apply -f https://projectcontour.io/quickstart/contour.yaml
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>kubectl apply <span class="nt">-f</span> https://projectcontour.io/quickstart/contour.yaml
+</pre></td></tr></tbody></table></code></div></div>
 
 <ul>
   <li>Contour 설정 업데이트</li>
 </ul>
 
-<pre><code class="language-{bash}">kubectl patch daemonsets -n projectcontour envoy -p '{"spec":{"template":{"spec":{"nodeSelector":{"ingress-ready":"true"},"tolerations":[{"key":"node-role.kubernetes.io/control-plane","operator":"Equal","effect":"NoSchedule"},{"key":"node-role.kubernetes.io/master","operator":"Equal","effect":"NoSchedule"}]}}}}'
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>kubectl patch daemonsets <span class="nt">-n</span> projectcontour envoy <span class="nt">-p</span> <span class="s1">'{"spec":{"template":{"spec":{"nodeSelector":{"ingress-ready":"true"},"tolerations":[{"key":"node-role.kubernetes.io/control-plane","operator":"Equal","effect":"NoSchedule"},{"key":"node-role.kubernetes.io/master","operator":"Equal","effect":"NoSchedule"}]}}}}'</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h4 id="kong-ingress-생성"><span class="mr-2">Kong Ingress 생성</span><a href="#kong-ingress-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
@@ -1087,15 +1171,21 @@ EOF
   <li>Kong 설치</li>
 </ul>
 
-<pre><code class="language-{bash}">kubectl apply -f https://raw.githubusercontent.com/Kong/kubernetes-ingress-controller/master/deploy/single/all-in-one-dbless.yaml
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>kubectl apply <span class="nt">-f</span> https://raw.githubusercontent.com/Kong/kubernetes-ingress-controller/master/deploy/single/all-in-one-dbless.yaml
+</pre></td></tr></tbody></table></code></div></div>
 
 <ul>
   <li>Kong 설정 업데이트</li>
 </ul>
 
-<pre><code class="language-{bash}">kubectl patch deployment -n kong ingress-kong -p '{"spec":{"template":{"spec":{"containers":[{"name":"proxy","ports":[{"containerPort":8000,"hostPort":80,"name":"proxy","protocol":"TCP"},{"containerPort":8443,"hostPort":443,"name":"proxy-ssl","protocol":"TCP"}]}],"nodeSelector":{"ingress-ready":"true"},"tolerations":[{"key":"node-role.kubernetes.io/control-plane","operator":"Equal","effect":"NoSchedule"},{"key":"node-role.kubernetes.io/master","operator":"Equal","effect":"NoSchedule"}]}}}}'
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>kubectl patch deployment <span class="nt">-n</span> kong ingress-kong <span class="nt">-p</span> <span class="s1">'{"spec":{"template":{"spec":{"containers":[{"name":"proxy","ports":[{"containerPort":8000,"hostPort":80,"name":"proxy","protocol":"TCP"},{"containerPort":8443,"hostPort":443,"name":"proxy-ssl","protocol":"TCP"}]}],"nodeSelector":{"ingress-ready":"true"},"tolerations":[{"key":"node-role.kubernetes.io/control-plane","operator":"Equal","effect":"NoSchedule"},{"key":"node-role.kubernetes.io/master","operator":"Equal","effect":"NoSchedule"}]}}}}'</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h4 id="nginx-ingress-생성"><span class="mr-2">Nginx Ingress 생성</span><a href="#nginx-ingress-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
@@ -1103,110 +1193,174 @@ EOF
   <li>Nginx 설치</li>
 </ul>
 
-<pre><code class="language-{bash}">kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>kubectl apply <span class="nt">-f</span> https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+</pre></td></tr></tbody></table></code></div></div>
 
 <ul>
   <li>Nginx 설정 업데이트</li>
 </ul>
 
-<pre><code class="language-{bash}">kubectl wait --namespace ingress-nginx \
-  --for=condition=ready pod \
-  --selector=app.kubernetes.io/component=controller \
-  --timeout=90s
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>kubectl <span class="nb">wait</span> <span class="nt">--namespace</span> ingress-nginx <span class="se">\</span>
+  <span class="nt">--for</span><span class="o">=</span><span class="nv">condition</span><span class="o">=</span>ready pod <span class="se">\</span>
+  <span class="nt">--selector</span><span class="o">=</span>app.kubernetes.io/component<span class="o">=</span>controller <span class="se">\</span>
+  <span class="nt">--timeout</span><span class="o">=</span>90s
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="ingress-사용-예제"><span class="mr-2">Ingress 사용 예제</span><a href="#ingress-사용-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<pre><code class="language-{bash}">kind: Pod
-apiVersion: v1
-metadata:
-  name: foo-app
-  labels:
-    app: foo
-spec:
-  containers:
-  - name: foo-app
-    image: hashicorp/http-echo:0.2.3
-    args:
-    - "-text=foo"
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: foo-service
-spec:
-  selector:
-    app: foo
-  ports:
-  # Default port used by the image
-  - port: 5678
----
-kind: Pod
-apiVersion: v1
-metadata:
-  name: bar-app
-  labels:
-    app: bar
-spec:
-  containers:
-  - name: bar-app
-    image: hashicorp/http-echo:0.2.3
-    args:
-    - "-text=bar"
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: bar-service
-spec:
-  selector:
-    app: bar
-  ports:
-  # Default port used by the image
-  - port: 5678
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: example-ingress
-spec:
-  rules:
-  - http:
-      paths:
-      - pathType: Prefix
-        path: "/foo"
-        backend:
-          service:
-            name: foo-service
-            port:
-              number: 5678
-      - pathType: Prefix
-        path: "/bar"
-        backend:
-          service:
-            name: bar-service
-            port:
-              number: 5678
----
-</code></pre>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+<div class="language-yaml highlighter-rouge"><div class="code-header">
+        <span data-label-text="YAML"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>test
-</pre></td></tr></tbody></table></code></div></div>
-
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>
-</pre></td></tr></tbody></table></code></div></div>
-
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+</pre></td><td class="rouge-code"><pre><span class="na">kind</span><span class="pi">:</span> <span class="s">Pod</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">foo-app</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">foo</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">containers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">foo-app</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">hashicorp/http-echo:0.2.3</span>
+    <span class="na">args</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">-text=foo"</span>
+<span class="nn">---</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Service</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">foo-service</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">foo</span>
+  <span class="na">ports</span><span class="pi">:</span>
+  <span class="c1"># Default port used by the image</span>
+  <span class="pi">-</span> <span class="na">port</span><span class="pi">:</span> <span class="m">5678</span>
+<span class="nn">---</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Pod</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">bar-app</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">bar</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">containers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">bar-app</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">hashicorp/http-echo:0.2.3</span>
+    <span class="na">args</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">-text=bar"</span>
+<span class="nn">---</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Service</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">bar-service</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">selector</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">bar</span>
+  <span class="na">ports</span><span class="pi">:</span>
+  <span class="c1"># Default port used by the image</span>
+  <span class="pi">-</span> <span class="na">port</span><span class="pi">:</span> <span class="m">5678</span>
+<span class="nn">---</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">networking.k8s.io/v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Ingress</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">example-ingress</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">rules</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">http</span><span class="pi">:</span>
+      <span class="na">paths</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">pathType</span><span class="pi">:</span> <span class="s">Prefix</span>
+        <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/foo"</span>
+        <span class="na">backend</span><span class="pi">:</span>
+          <span class="na">service</span><span class="pi">:</span>
+            <span class="na">name</span><span class="pi">:</span> <span class="s">foo-service</span>
+            <span class="na">port</span><span class="pi">:</span>
+              <span class="na">number</span><span class="pi">:</span> <span class="m">5678</span>
+      <span class="pi">-</span> <span class="na">pathType</span><span class="pi">:</span> <span class="s">Prefix</span>
+        <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/bar"</span>
+        <span class="na">backend</span><span class="pi">:</span>
+          <span class="na">service</span><span class="pi">:</span>
+            <span class="na">name</span><span class="pi">:</span> <span class="s">bar-service</span>
+            <span class="na">port</span><span class="pi">:</span>
+              <span class="na">number</span><span class="pi">:</span> <span class="m">5678</span>
+<span class="nn">---</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 
