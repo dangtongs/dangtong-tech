@@ -44,7 +44,7 @@ const resource = [
 const allowedDomains = [
   
 
-  'dangtongs.github.io',
+  'localhost:4000',
 
   
     'raw.githubusercontent.com',
