@@ -42,27 +42,27 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="kind를 이용한 데이터 생성" />
+<meta property="og:title" content="kind를 이용한 쿠버네티스 클러스터 생성하기" />
 <meta name="author" content="dangtong" />
 <meta property="og:locale" content="ko" />
-<meta name="description" content="Kind 를 이용한 쿠버네티스 로컬 설치 가이드" />
-<meta property="og:description" content="Kind 를 이용한 쿠버네티스 로컬 설치 가이드" />
+<meta name="description" content="1. What is Kind?" />
+<meta property="og:description" content="1. What is Kind?" />
 <link rel="canonical" href="http://localhost:4000/dangtong-tech/posts/kind/" />
 <meta property="og:url" content="http://localhost:4000/dangtong-tech/posts/kind/" />
 <meta property="og:site_name" content="dangtong’s Tech Blog!!" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2012-09-08T21:55:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="kind를 이용한 데이터 생성" />
+<meta property="twitter:title" content="kind를 이용한 쿠버네티스 클러스터 생성하기" />
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="twitter:creator" content="@dangtong" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dangtong"},"dateModified":"2022-09-21T23:20:19+09:00","datePublished":"2012-09-08T21:55:00+09:00","description":"Kind 를 이용한 쿠버네티스 로컬 설치 가이드","headline":"kind를 이용한 데이터 생성","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/dangtong-tech/posts/kind/"},"url":"http://localhost:4000/dangtong-tech/posts/kind/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"dangtong"},"dateModified":"2022-09-21T23:20:19+09:00","datePublished":"2012-09-08T21:55:00+09:00","description":"1. What is Kind?","headline":"kind를 이용한 쿠버네티스 클러스터 생성하기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/dangtong-tech/posts/kind/"},"url":"http://localhost:4000/dangtong-tech/posts/kind/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>kind를 이용한 데이터 생성 | dangtong's Tech Blog!!
+  <title>kind를 이용한 쿠버네티스 클러스터 생성하기 | dangtong's Tech Blog!!
   </title>
 
   <!--
@@ -429,7 +429,7 @@
         
 
           
-            <span>kind를 이용한 데이터 생성</span>
+            <span>kind를 이용한 쿠버네티스 클러스터 생성하기</span>
           
 
         
@@ -893,7 +893,7 @@
 
 
 
-<h1 data-toc-skip>kind를 이용한 데이터 생성</h1>
+<h1 data-toc-skip>kind를 이용한 쿠버네티스 클러스터 생성하기</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -983,7 +983,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="961 words">
+  title="944 words">
   <em>5 min</em> read</span>
 
     </div>
@@ -993,9 +993,7 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h1 id="kind-를-이용한-쿠버네티스-로컬-설치-가이드">Kind 를 이용한 쿠버네티스 로컬 설치 가이드</h1>
-
-<h2 id="1-what-is-kind"><span class="mr-2">1. What is Kind?</span><a href="#1-what-is-kind" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+  <h2 id="1-what-is-kind"><span class="mr-2">1. What is Kind?</span><a href="#1-what-is-kind" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h2 id="2-install-kind"><span class="mr-2">2. Install Kind</span><a href="#2-install-kind" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -1523,19 +1521,19 @@ networking:
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=kind%EB%A5%BC+%EC%9D%B4%EC%9A%A9%ED%95%9C+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EC%83%9D%EC%84%B1+-+dangtong%27s+Tech+Blog%21%21&url=http%3A%2F%2Flocalhost%3A4000%2Fdangtong-tech%2Fposts%2Fkind%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=kind%EB%A5%BC+%EC%9D%B4%EC%9A%A9%ED%95%9C+%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4+%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0+%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0+-+dangtong%27s+Tech+Blog%21%21&url=http%3A%2F%2Flocalhost%3A4000%2Fdangtong-tech%2Fposts%2Fkind%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=kind%EB%A5%BC+%EC%9D%B4%EC%9A%A9%ED%95%9C+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EC%83%9D%EC%84%B1+-+dangtong%27s+Tech+Blog%21%21&u=http%3A%2F%2Flocalhost%3A4000%2Fdangtong-tech%2Fposts%2Fkind%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=kind%EB%A5%BC+%EC%9D%B4%EC%9A%A9%ED%95%9C+%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4+%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0+%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0+-+dangtong%27s+Tech+Blog%21%21&u=http%3A%2F%2Flocalhost%3A4000%2Fdangtong-tech%2Fposts%2Fkind%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fdangtong-tech%2Fposts%2Fkind%2F&text=kind%EB%A5%BC+%EC%9D%B4%EC%9A%A9%ED%95%9C+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EC%83%9D%EC%84%B1+-+dangtong%27s+Tech+Blog%21%21" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fdangtong-tech%2Fposts%2Fkind%2F&text=kind%EB%A5%BC+%EC%9D%B4%EC%9A%A9%ED%95%9C+%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4+%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0+%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0+-+dangtong%27s+Tech+Blog%21%21" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -1590,7 +1588,7 @@ networking:
         
         
         
-      <li><a href="/dangtong-tech/posts/kind/">kind를 이용한 데이터 생성</a></li>
+      <li><a href="/dangtong-tech/posts/kind/">kind를 이용한 쿠버네티스 클러스터 생성하기</a></li>
       
         
         
