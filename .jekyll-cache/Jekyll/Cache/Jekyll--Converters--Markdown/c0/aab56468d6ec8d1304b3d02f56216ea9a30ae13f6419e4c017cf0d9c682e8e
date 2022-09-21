@@ -1,4 +1,4 @@
-I"zU<h2 id="1-what-is-kind">1. What is Kind?</h2>
+I"U<h2 id="1-what-is-kind">1. What is Kind?</h2>
 
 <h2 id="2-install-kind">2. Install Kind</h2>
 
@@ -50,7 +50,7 @@ kubectl cluster-info <span class="nt">--context</span> dangtong
 
 <h2 id="4-설정-파일을-이용한-kind-클러스터-생성">4. 설정 파일을 이용한 Kind 클러스터 생성</h2>
 
-<h3 id="클러스터-생성-1">클러스터 생성</h3>
+<h3 id="41-클러스터-생성">4.1 클러스터 생성</h3>
 
 <h4 id="설정-파일을-이용한-클러스터-생성">설정 파일을 이용한 클러스터 생성</h4>
 
@@ -169,7 +169,7 @@ networking:
   <span class="na">kubeProxyMode</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ipvs"</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h3 id="45-ingress-및-loadbalancer-설정">4.5 Ingress 및 LoadBalancer 설정</h3>
+<h3 id="44-ingress-및-loadbalancer-설정">4.4 Ingress 및 LoadBalancer 설정</h3>
 
 <p>Ingress 및 Loadbalancer 를 설정하기 위해서는 KIND 를 이용한 클러스터 생성시  extraPortMapping 설정을 하고, kubeadm툴을 통해 custom node label 을 노드에 설정해야 합니다.</p>
 
