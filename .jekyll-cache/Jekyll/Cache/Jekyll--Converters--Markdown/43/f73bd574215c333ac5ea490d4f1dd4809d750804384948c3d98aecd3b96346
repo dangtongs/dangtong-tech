@@ -1,16 +1,16 @@
-I"�T<h2 id="1-what-is-kind">1. What is Kind?</h2>
+I"�T<h1 id="1-what-is-kind">1. What is Kind?</h1>
 
-<h2 id="2-install-kind">2. Install Kind</h2>
+<h1 id="2-install-kind">2. Install Kind</h1>
 
 <p>설치 가이드 URL : https://kind.sigs.k8s.io/docs/user/quick-start/#installation</p>
 
-<h3 id="macos">MacOS</h3>
+<h2 id="macos">MacOS</h2>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>brew install kind
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h3 id="windows">Windows</h3>
+<h2 id="windows">Windows</h2>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>choco <span class="nb">install </span>kind
@@ -50,7 +50,7 @@ kubectl cluster-info <span class="nt">--context</span> dangtong
 
 <h2 id="4-설정-파일을-이용한-kind-클러스터-생성">4. 설정 파일을 이용한 Kind 클러스터 생성</h2>
 
-<h3 id="--클러스터-생성">- 클러스터 생성</h3>
+<h3 id="클러스터-생성-1">클러스터 생성</h3>
 
 <h4 id="설정-파일을-이용한-클러스터-생성">설정 파일을 이용한 클러스터 생성</h4>
 
