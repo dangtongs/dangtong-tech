@@ -4,7 +4,7 @@
   <id>http://localhost:4000/dangtong-tech/</id>
   <title>dangtong's Tech Blog!!</title>
   <subtitle>A minimal, responsive, and powerful Jekyll theme for presenting professional writing.</subtitle>
-  <updated>2022-09-22T02:08:54+09:00</updated>
+  <updated>2022-09-22T02:10:40+09:00</updated>
   <author>
     <name>Dangtong Byun</name>
     <uri>http://localhost:4000/dangtong-tech/</uri>
@@ -79,7 +79,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
     <link href="http://localhost:4000/dangtong-tech/posts/kind/" rel="alternate" type="text/html" title="kind를 이용한 쿠버네티스 클러스터 생성하기" />
     <published>2012-09-22T21:55:00+09:00</published>
   
-    <updated>2012-09-22T21:55:00+09:00</updated>
+    <updated>2022-09-22T02:09:06+09:00</updated>
   
     <id>http://localhost:4000/dangtong-tech/posts/kind/</id>
     <content src="http://localhost:4000/dangtong-tech/posts/kind/" />
